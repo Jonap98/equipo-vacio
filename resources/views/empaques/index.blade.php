@@ -9,10 +9,11 @@
         <div class="row justify-contnet-center">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between">
-                    <H5>Etiquetas Equipo Vacío</H5>
+                    <H5>Empaques</H5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSensor">
-                        Imprimir
+                        Agregar empaque
                     </button>
+                    @include('empaques.create')
                 </div>
                 <hr>
                 @if(session('success'))
@@ -25,15 +26,7 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                <div class="d-flex justify-content-between mb-2">
-                    <div class="col-md-3">
-                        <span>Número de parte</span>
-                        <select class="form-select" name="num_parte" id="num_parte" onchange="selectNumber(value)">
-                            @foreach ($empaques as $empaque)
-                                <option class="form-control" value="{{ $empaque }}">{{ $empaque->numero_de_parte }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                <div class="d-flex justify-content-between">
 
                 </div>
 
@@ -42,24 +35,24 @@
                         <div class="row g-2">
 
                             <div class="card col-md-12 p-2">
-                                {{-- <table id="sensores" class="table table-striped m-2">
+                                <table id="sensores" class="table table-striped m-2">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Sensor</th>
                                             <th scope="col">Número de parte</th>
-                                            <th scope="col">Ubicación línea</th>
+                                            <th scope="col">Descripción</th>
+                                            <th scope="col">Standar pack</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($sensores as $sensor)
+                                        @foreach ($empaques as $empaque)
                                             <tr>
-                                                <td>{{ $sensor->sensor }}</td>
-                                                <td>{{ $sensor->num_parte }}</td>
-                                                <td>{{ $sensor->ubicacion_linea }}</td>
+                                                <td>{{ $empaque->numero_de_parte }}</td>
+                                                <td>{{ $empaque->descripcion }}</td>
+                                                <td>{{ $empaque->standar_pack }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                </table> --}}
+                                </table>
                                 
                             </div>
                         </div>
@@ -82,19 +75,6 @@
                     ]
                 });
             });
-        </script>
-
-        <script>
-            const selectNumber = (number) => {
-                const obj = JSON.parse(number);
-
-                console.log(obj);
-                console.log(obj.numero_de_parte);
-                console.log(obj.descripcion);
-                // console.log(JSON.parse(number));
-                // console.log(JSON.parse(number.numero_de_parte));
-                // console.log(number.numero_de_parte);
-            }
         </script>
     @endsection
     

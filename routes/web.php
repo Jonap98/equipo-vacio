@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\etiquetas\EtiquetasController;
+use App\Http\Controllers\empaques\EmpaquesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use App\Http\Controllers\etiquetas\EtiquetasController;
 |
 */
 
+// Etiquetas
 Route::get('/', [EtiquetasController::class, 'index'])->name('etiquetas');
+
+// Empaques
+Route::get('empaques', [EmpaquesController::class, 'index'])->name('empaques');
+Route::post('empaques/store', [EmpaquesController::class, 'store'])->name('empaques.store');
+
 
