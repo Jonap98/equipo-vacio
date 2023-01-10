@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Empaques extends Model
 {
     use HasFactory;
-    protected $table = 'ev_numeros_empaque';
+    protected $connection = 'sqlsrv';
+    protected $table = 'EV_numeros_empaque';
     protected $fillable = [
         'id',
         'numero_de_parte',

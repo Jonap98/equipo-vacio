@@ -21,12 +21,6 @@ class EmpaquesController extends Controller
     }
 
     public function store(Request $request) {
-        // return response([
-        //     'data' => $request->all(),
-        //     'numero_de_partre' => $request->numero_de_parte,
-        //     'descripcion' => $request->descripcion,
-        //     'standar_pack' => $request->standar_pack,
-        // ]);
         $empaque = new Empaques();
 
         $empaque->numero_de_parte = $request->numero_de_parte;

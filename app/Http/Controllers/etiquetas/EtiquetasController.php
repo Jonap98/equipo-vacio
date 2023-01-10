@@ -17,9 +17,6 @@ class EtiquetasController extends Controller
             'standar_pack'
         )
         ->get();
-        // return response([
-        //     'data' => $empaques
-        // ]);
 
         return view('etiquetas.index', array('empaques' => $empaques));
     }

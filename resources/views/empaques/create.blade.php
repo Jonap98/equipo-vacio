@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="m-2">
-                        <label class="d-block" for="">Descripcion</label>
+                        <label class="d-block" for="">Descripción</label>
                         <input type="text" id="descripcion" name="descripcion" class="form-control">
                     </div>
 

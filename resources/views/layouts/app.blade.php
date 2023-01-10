@@ -31,7 +31,7 @@
                     <img src="{{ asset('assets/whirlpool-logo.png') }}" alt="" width="100px">
                 </a>
                 <div class="navbar-link">
-                    <b>Rack system</b>
+                    <b>Equipo vacío</b>
                 </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">

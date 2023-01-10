@@ -14,7 +14,9 @@ use App\Http\Controllers\empaques\EmpaquesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\barcode\BarcodeController;
 
+Route::get('/barcode', [BarcodeController::class, 'index']);
 // Etiquetas
 Route::get('/', [EtiquetasController::class, 'index'])->name('etiquetas');
 
